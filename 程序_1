@@ -1,0 +1,11 @@
+数据格式
+为了使用户能对更多的市场进行算法回测研究，我们自定义了一套统一的金融数据格式，
+有pandas Panel/DataFrame/Series以及ndarray
+以获取股票历史行情函数get_price返回的数据格式为例介绍：
+传入一个order_book_id，多个fields，函数会返回一个pandas DataFrame
+
+history_bars函数
+history_bars(order_book_id, bar_count, frequency, fields)
+获取指定合约的历史行情，同时支持日以及分钟历史数据。不能在init中调用。
+注意，该API会自动跳过停牌数据。
+可支持：日回测获取日历史数据、分钟回测获取日历史数据、分钟回测获取分钟历史数据
