@@ -4,3 +4,41 @@ a=set(a)
 b=[1,1,2,2,3,4,5]
 b=set(b)
 set 可以消除重复的多余数字
+
+参数
+必选参数、默认参数、可变参数、关键字参数（如果混合顺序也是这样）
+*args 可变参数 tuple
+**kw  关键字参数 dict
+
+lambda 函数
+lambda语句中，冒号前是参数，可以有多个，用逗号分割；冒号右边是返回值
+g = lambda x: 2*x+1  
+def ds(x):  
+    return 2*x+1 
+一样
+加 reduce
+list = [1,2,3,4,5]    
+print reduce(lambda x,y:x+y,list)  
+reduce
+reduce(function,sequence)：对sequence中的item顺序迭代调用function。
+>> reduce(lambda x, y: x+y, [1, 2, 3, 4, 5])
+15
+# 内部执行过程，((((1+2)+3)+4)+5)
+
+filter函数**
+参数：一个函数func和一个列表list
+func的作用：对list的每个元素进行判断，符合条件返回true,否则返回false
+filter根据判断结果自动过滤掉不符合条件的元素，并返回有符合元素组成的新列表
+x=range(10)  
+filter(lambda x:x%2==1,x) 
+
+map(…) 函数官方文档 
+map函数结果生成一个list，参数为函数、一个或多个序列；如果函数的参数只有一个，那么应该有一个序列，有多个参数，那么应该有相应数量的序列。 
+简单的说：map(function,sequence) ：对sequence中的item依次执行function(item)，见执行结果组成一个List返回 
+>>> map(lambda x: x*2, range(1,10))
+[2, 4, 6, 8, 10, 12, 14, 16, 18]
+>>> map(lambda x, y: x*y, range(1,10), range(2, 11))
+[2, 6, 12, 20, 30, 42, 56, 72, 90]
+>>> map(lambda x: 1, range(1,10))
+[1, 1, 1, 1, 1, 1, 1, 1, 1]
+
